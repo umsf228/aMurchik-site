@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import "background";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {  
+  font-family: "Montserrat", sans-serif;
+  background-image: url('images/fon3.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+} 
+
+section {
+  z-index: 3;
+  position: relative;
+}
+
+nav {
+  position: relative;
+  z-index: 5;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2em;
+  color: #fafafa;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: .3s;
+}
+
+.cart-animation {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cart-animation h1 {
+  font-size: 2em;
+  color: rgb(0, 0, 0);
+}
+
+.btn-amurchik {
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: all .1s ease-in;
+  position: relative;
+  text-shadow: 0 0 10px #000000;
+  border-radius: 10px;
+
+
+  &:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ffffff72;
+    transition: all .35s;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+  }
+
+  &:hover {
+    color: black;
+    text-shadow: none;
+    &:after {
+      width: 100%;
+    }
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.about-section {
+  position: relative;
+  top: 50px;
+  color: rgb(249, 249, 249);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+}
+
+.about-section div {
+  flex: 1;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: 10px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.carousel-buttons button {
+  background-color: #ff6f61;
+  border: none;
+  margin: 0 5px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 10px;
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (max-width: 920px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.feature-box {
+  display: inline-block;
+  // background-color: white;
+  color: #ffffff;
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  border-radius: 10px;
+  height: 100%;
+  min-height: 218px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0 10px #0000008b;
+}
+
+.feature-box h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+footer {
+  background: #ffffff7c !important;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 70px;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 1280px) {
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+  }
+  
+  .nav-link {
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+  }
+  
+  .cart-animation h1 {
+    font-size: 1.5em;
+  }
+  
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .about-section p, .feature-box h3 {
+    font-size: 1rem;
+  }
+  
+  .btn-amurchik {
+    font-size: 1rem;
+    padding: 8px 15px;
+    align-self: center; 
+  }
+}
+.glass {
+  // background: rgba( 255, 255, 255, 0.45 );
+  // box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  // backdrop-filter: blur( 6px );
+  // -webkit-backdrop-filter: blur( 6px );
+  // border: 1px solid rgba( 255, 255, 255, 0.18 );
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.416), rgba(255, 255, 255, 0.279));
+  backdrop-filter: blur( 15px );
+  -webkit-backdrop-filter: blur( 15px );
+  border: 1px solid rgba(255, 255, 255, 0.18)
+}
+// ==============================================================

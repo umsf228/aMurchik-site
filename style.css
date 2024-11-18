@@ -1,16 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+.area {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 50px; /* ширина сердечка */
+  height: 50px; /* высота сердечка */
+  transform: rotate(45deg); /* поворот для создания ромба */
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.circles li::before,
+.circles li::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.circles li::before {
+  top: -25px;
+  left: 0;
+  -webkit-clip-path: inset(0 0 50% 0);
+          clip-path: inset(0 0 50% 0);
+}
+
+.circles li::after {
+  top: 0;
+  left: -25px;
+  -webkit-clip-path: inset(0 50% 0 0);
+          clip-path: inset(0 50% 0 0);
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+  }
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body {  
-  font-family: "Sofadi One", sans-serif;
-  background-image: url('images/fon3.png');
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url("images/fon3.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+section {
+  z-index: 3;
+  position: relative;
+}
+
+nav {
+  position: relative;
+  z-index: 5;
 }
 
 .navbar-nav .nav-link {
@@ -26,9 +147,8 @@ body {
   width: 0;
   height: 2px;
   background: #ffffff;
-  transition: .3s;
+  transition: 0.3s;
 }
-
 
 .cart-animation {
   display: flex;
@@ -43,22 +163,43 @@ body {
 }
 
 .btn-amurchik {
-  background-color: #ffffff;
-  border-radius: 10px;
-  color: rgb(0, 0, 0);
+  color: white;
   padding: 10px 20px;
-  border: none;
   cursor: pointer;
   font-size: 1.2rem;
   text-decoration: none;
   display: inline-block;
   margin-top: 20px;
-  transition: .3s linear;
+  transition: all 0.1s ease-in;
+  position: relative;
+  text-shadow: 0 0 10px #000000;
+  border-radius: 10px;
 }
-
+.btn-amurchik:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4470588235);
+  transition: all 0.35s;
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
 .btn-amurchik:hover {
-  background-color: #b8b6b6;
-  scale: 1.2;
+  color: black;
+  text-shadow: none;
+}
+.btn-amurchik:hover:after {
+  width: 100%;
+}
+.btn-amurchik span {
+  position: relative;
+  z-index: 2;
 }
 
 .about-section {
@@ -95,7 +236,8 @@ body {
   width: 100%;
   border-radius: 10px;
   height: 400px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .carousel-buttons {
@@ -115,34 +257,45 @@ body {
 
 .features {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 50px 0;
+  padding: 50px 10px;
   text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+@media (max-width: 920px) {
+  .features {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .feature-box {
   display: inline-block;
-  background-color: white;
-  color: #333;
+  color: #ffffff;
   padding: 20px;
   margin: 20px;
   width: 300px;
   border-radius: 10px;
+  height: 100%;
+  min-height: 218px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5450980392);
 }
 
 .feature-box h3 {
   font-size: 1.5rem;
-  color: #ff6f61;
+  color: #ffffff;
 }
 
 footer {
-  background-color: #ff6f61;
+  background: rgba(255, 255, 255, 0.4862745098) !important;
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 70px;
+  width: 100%;
 }
 
 footer p {
@@ -150,61 +303,43 @@ footer p {
 }
 
 @media (max-width: 1280px) {
-  
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
   .logo {
     font-size: 1.5em;
   }
-  
   .nav-link {
     font-size: 0.9em;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
   }
-  
   .cart-animation h1 {
     font-size: 1.5em;
   }
-  
   .about-section {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
   }
-  
   .about-section h2 {
     font-size: 1.5rem;
   }
-  
   .about-section p, .feature-box h3 {
     font-size: 1rem;
   }
-  
-  .features {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-  }
-  
   .btn-amurchik {
     font-size: 1rem;
     padding: 8px 15px;
-    align-self: center; 
+    align-self: center;
   }
-
-  
-  footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    padding: 15px;
-    font-size: 0.9rem;
-    margin-top: auto;
-  }
+}
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.416), rgba(255, 255, 255, 0.279));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
