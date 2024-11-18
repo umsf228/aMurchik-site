@@ -13,13 +13,6 @@ body {
   background-attachment: fixed;
 }
 
-.navbar-brand {
-  position: relative;
-  right: 100px;
-}
-
-
-
 .navbar-nav .nav-link {
   font-size: 1.2em;
   color: #fafafa;
@@ -50,9 +43,9 @@ body {
 }
 
 .btn-amurchik {
-  background-color: #e63121;
-  border-radius: 3%;
-  color: white;
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -64,7 +57,7 @@ body {
 }
 
 .btn-amurchik:hover {
-  background-color: #ff5a4f;
+  background-color: #b8b6b6;
   scale: 1.2;
 }
 
@@ -154,18 +147,6 @@ footer {
 
 footer p {
   margin: 0;
-}
-@media (max-width: 992px) {
-  .navbar-brand {
-    position: relative;
-    left: 20px;
-  }
-}
-@media (max-width: 1280px) {
-  .navbar-brand {
-    position: relative;
-    left: 20px;
-  }
 }
 
 @media (max-width: 1280px) {
