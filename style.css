@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {  
+  font-family: "Sofadi One", sans-serif;
+  background-image: url('images/fon3.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.navbar-brand {
+  position: relative;
+  right: 100px;
+}
+
+
+
+.navbar-nav .nav-link {
+  font-size: 1.2em;
+  color: #fafafa;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: .3s;
+}
+
+
+.cart-animation {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cart-animation h1 {
+  font-size: 2em;
+  color: rgb(0, 0, 0);
+}
+
+.btn-amurchik {
+  background-color: #e63121;
+  border-radius: 3%;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: .3s linear;
+}
+
+.btn-amurchik:hover {
+  background-color: #ff5a4f;
+  scale: 1.2;
+}
+
+.about-section {
+  position: relative;
+  top: 50px;
+  color: rgb(249, 249, 249);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+}
+
+.about-section div {
+  flex: 1;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: 10px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.carousel-buttons button {
+  background-color: #ff6f61;
+  border: none;
+  margin: 0 5px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.feature-box {
+  display: inline-block;
+  background-color: white;
+  color: #333;
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box h3 {
+  font-size: 1.5rem;
+  color: #ff6f61;
+}
+
+footer {
+  background-color: #ff6f61;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 0;
+}
+@media (max-width: 992px) {
+  .navbar-brand {
+    position: relative;
+    left: 20px;
+  }
+}
+@media (max-width: 1280px) {
+  .navbar-brand {
+    position: relative;
+    left: 20px;
+  }
+}
+
+@media (max-width: 1280px) {
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+  }
+  
+  .nav-link {
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+  }
+  
+  .cart-animation h1 {
+    font-size: 1.5em;
+  }
+  
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .about-section p, .feature-box h3 {
+    font-size: 1rem;
+  }
+  
+  .features {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .btn-amurchik {
+    font-size: 1rem;
+    padding: 8px 15px;
+    align-self: center; 
+  }
+
+  
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 15px;
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
+}
