@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -6,7 +6,7 @@
 }
 
 body {  
-  font-family: "Sofadi One", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-image: url('images/fon3.png');
   background-size: cover;
   background-position: center;
