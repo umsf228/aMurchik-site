@@ -9,3 +9,13 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
       bootstrapCollapse.hide();
   });
 });
+
+const burger = document.querySelector('.burger')
+const navbar = document.querySelector('.navbar-collapse')
+
+burger.addEventListener('click', () => {
+  navbar.classList.toggle('active')
+})
+navbar.addEventListener('click', () => {
+  navbar.classList.toggle('active')
+})
