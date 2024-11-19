@@ -21,24 +21,34 @@ section {
 }
 
 nav {
-  position: relative;
-  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  color: azure;
+}
+li {
+  margin: 20px;
+}
+.nav-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navbar-nav{
+  display: inline-block;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  margin: 20px;
+  padding: 10px;
 }
 
-.navbar-nav .nav-link {
-  font-size: 1.2em;
-  color: #fafafa;
-}
-
-.nav-link::before {
-  content: "";
-  position: absolute;
-  top: 35px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #ffffff;
-  transition: .3s;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cart-animation {
@@ -251,3 +261,75 @@ footer p {
   border: 1px solid rgba(255, 255, 255, 0.18)
 }
 // ==============================================================
+.burger {
+  position: relative;
+  flex: 0 0 30px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 6;
+  display: none;
+
+  &::after, &::before {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 1.5px;
+    left: 0;
+  }
+
+  &::after {
+    top: 0;
+  }
+
+  &::before {
+    bottom: 0;
+  }
+
+  span {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    background: white;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+}
+
+.navbar-collapse {
+  transition: all .3s ease-in;
+}
+
+@media (max-width: 600px) {
+  .navbar-collapse {
+    width: 100%;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: #000000a7;
+    z-index: 5;
+
+    &.active {
+      top: 0;
+    }
+  }
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    padding: 20px 0;
+
+    .container {
+      display: flex !important;
+      justify-content: space-between !important;
+    }
+  }
+}
